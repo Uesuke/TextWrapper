@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>文字列つつむくん</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/main.js"></script>
+</head>
+<body>
+	<div class="main">
+		<h1>文字列つつむくん</h1>
+		<div class="about_area">
+			<p>テキストエリアに入力した中身の各行を、二つの文字列でつつみます。</p>
+			<p>大量の文字列を「」でくくりたいときや、サーブレットにおけるHTML出力のコード記述を簡単にしたいときに役立ちます。</p>
+		</div>
+		<div class="form_area">
+			<form action="TextWrapperServlet" method="post">
+				<p>
+					<label for="former">前の文字列を入力してください</label><br>
+					<input type="text" name="former" id="former" value="out.println(\&quot;">
+				</p>
+				<p>
+					<label for="latter">後の文字列を入力してください</label><br>
+					<input type="text" name="latter" id="latter" value="\&quot;);">
+				</p>
+<!--				<p>-->
+<!--					<input type="checkbox" name="eraseOrNot" checked>入力した各行の行頭の空白・インデントを削除-->
+<!--				</p>-->
+				<p>
+					<input type="checkbox" name="insertOrNot" checked>入力した文字列に含まれる「"」の直前にエスケープシーケンス「\」を挿入(サーブレットユーザー向け)
+				</p>
+				<p>
+					<label for="content"></label><br>
+					<textarea name="content" id="content" placeholder="中身を入力してください"></textarea>
+				</p>
+				<p class="btn"><button type="submit">実行</button></p>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
